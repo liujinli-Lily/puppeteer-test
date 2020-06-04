@@ -14,7 +14,7 @@
     "pdf": "node pdf.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "jinli",
   "license": "ISC",
   "description": ""
 }
