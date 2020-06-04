@@ -1,0 +1,15 @@
+.DS_Store
+.happypack/
+node_modules/
+npm-debug.log
+.idea/
+*.iml
+artifacts.json
+*tmp
+_site
+.vscode
+package-lock.json
+yarn.lock
+.gitkeep
+img/
+lyric/

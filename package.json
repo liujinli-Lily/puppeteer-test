@@ -1,0 +1,20 @@
+{
+  "name": "puppeteer-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "debug": "^4.1.1",
+    "puppeteer": "^3.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "screen": "node screenshot.js",
+    "music": "node music.js",
+    "pdf": "node pdf.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
