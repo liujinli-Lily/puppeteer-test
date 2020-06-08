@@ -8,7 +8,7 @@ const MyMethods = require('./utils/file');
     // 进入页面
     await page.goto('https://music.163.com/#');
 
-    // 点击搜索框拟人输入 鬼才会想起
+    // 点击搜索框拟人输入
     const musicName = '明天你好';
     await page.type('.txt.j-flag', musicName, {delay: 0});
 
@@ -20,7 +20,7 @@ const MyMethods = require('./utils/file');
     let iframe = await page.frames().find(f => f.name() === 'contentFrame');
     const SONG_LS_SELECTOR = await iframe.$('.srchsongst');
 
-    // 获取歌曲 鬼才会想起 的地址
+    // 获取歌曲 的地址
     const selectedSongHref = await iframe.evaluate(e => {
         const songList = Array.from(e.childNodes);
         const idx = songList.findIndex(v => v.childNodes[1].innerText.replace(/\s/g, '') === '明天你好');

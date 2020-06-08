@@ -6,23 +6,26 @@ const MyMethods = require('./utils/file');
 // 打开浏览器
 (async () => {
     const browser = await puppeteer.launch({
-        headless: false
+        headless: false //打开可视界面
     });
     const page = await browser.newPage();
-    await page.goto('https://www.cnblogs.com/Wayou/p/using_puppeteer_to_take_screenshot.html');
+    await page.goto('https://www.cnblogs.com/Wayou/p/using_puppeteer_to_take_screenshot.html',{
+        // waitUtil: 'networkidle2'
+    });
+    await page.waitFor(5000);
     await page.setViewport({
         width: 1200,
         height: 800
     });
 
-    await autoScroll(page);
+    //await autoScroll(page);
 
     await MyMethods.mkdirFn(path.dirname(__filename) + '/img','img');
 
     await page.screenshot({
         path: path.dirname(__filename) + '/img/'+ new Date().getTime() +'.png', //指定文件目录
         type: 'png',
-        fullPage: true
+        fullPage: true,
     });
 
     await browser.close();
